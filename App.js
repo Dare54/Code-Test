@@ -8,6 +8,7 @@ import { UploadScreen } from "./src/screens/UploadScreen";
 import { ScanScreen } from "./src/screens/ScanScreen";
 import { NotificationScreen } from "./src/screens/NotificationScreen";
 import { ProfileScreen } from "./src/screens/ProfileScreen";
+import { Entypo, Feather, AntDesign, FontAwesome, Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 const s = StyleSheet.create({
@@ -25,12 +26,59 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Upload" component={UploadScreen} />
-        <Tab.Screen name="Scan" component={ScanScreen} />
-        <Tab.Screen name="Notification" component={NotificationScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarActiveTintColor: "tomato",
+          tabBarInactiveTintColor: "gray",
+        })}
+      >
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({ focused, color, size }) => 
+              (
+                <Entypo name="home" size={24} color={color} />
+              )
+            
+          }}
+        />
+        <Tab.Screen name="Upload" component={UploadScreen} 
+         options={{
+          tabBarIcon: ({ focused, color, size }) => 
+            (
+              <FontAwesome name="pencil" size={24} color={color} />
+            )
+          
+        }}
+        />
+        <Tab.Screen name="Scan" component={ScanScreen}
+         options={{
+          tabBarIcon: ({ focused, color, size }) => 
+            (
+              <Entypo name="home" size={24} color={color} />
+            )
+          
+        }}
+        />
+        <Tab.Screen name="Notification" component={NotificationScreen} 
+         options={{
+          tabBarIcon: ({ focused, color, size }) => 
+            (
+              <FontAwesome name="bell" size={24} color={color} />
+            )
+          
+        }}
+        />
+        <Tab.Screen name="Profile" component={ProfileScreen} 
+         options={{
+          tabBarIcon: ({ focused, color, size }) => 
+            (
+              <Ionicons name="person" size={24} color={color} />
+            )
+          
+        }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
