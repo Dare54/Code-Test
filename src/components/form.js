@@ -22,7 +22,7 @@ export default () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>What is your name?</Text>
+      <Text style={styles.label}>Search</Text>
       <TextInput
         style={styles.input}
         placeholder="John Doe"

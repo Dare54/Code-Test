@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Text, Image, StyleSheet, View, ScrollView } from "react-native";
 
 
 const styles = StyleSheet.create({
@@ -56,10 +56,9 @@ const styles = StyleSheet.create({
     width: 31,
     height: 31,
     borderRadius: 11,
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
     marginLeft: 24,
   },
-
   img1: {
     width: 151,
     height: 151,
@@ -92,7 +91,10 @@ const Body = () => {
         />
         <Text style={styles.Fd61}>{">"} 60mins </Text>
       </View>
+      
     </>
+
+
   );
 };
 
